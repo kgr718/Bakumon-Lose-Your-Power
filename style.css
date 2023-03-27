@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+body{
+    height: 100%;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    background-image: url(images/DigitalWorld.jg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.score{
+    font-size: 4em;
+    color: blue;
+    margin: 0;
+    text-align: center;
+   
+}
+
+.digitalworld {
+    height: 600px;
+    width: 600px;
+    margin-top: 100px;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    
+}
+
+.portal{
+    border-radius: 50%;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 10px 0 7px black
+                inset 20px 20px 15px black
+                0 0 5px black(0,0,0,.5);
+
+
+}
+
+.bakumon, img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.portal .bakumon{
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise .1s ease-out;
+    
+}
+@keyframes rise{
+    0%{
+        transform: translateX(-50%) translateY(-100%);
+    }
+    100%{
+        transform: translateX(-50%) translateY(0)
+    }
+}
+.hammer{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-image: url("images/Zudomon.jpg");
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none;
+}
+
+.hammer.active{
+    transform: translate(-20%, -20%) rotate(-45deg)
+}
